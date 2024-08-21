@@ -239,51 +239,55 @@ footer {
     }
 }
 
-/* Name Styling */
-.profile-name {
+
+
+/* Name Container */
+.name-container {
+    display: flex;
+    align-items: center;
     margin-top: 1rem;
-    font-size: 2rem; /* Adjust the font size */
-    text-align: center;
-    color: #333;
-    letter-spacing: 2px; /* Adds some spacing between letters */
-    font-weight: 700;
-    text-transform: uppercase;
-    animation: fadeIn 1.5s ease-out, textGlow 2s infinite alternate;
+    overflow: hidden; /* Hide the text initially */
     position: relative;
 }
 
-/* Name Underline Effect */
-.profile-name::after {
-    content: '';
-    display: block;
-    width: 60%; /* Adjust the width of the underline */
-    height: 4px;
-    background-color: #f4a261; /* Customize the underline color */
-    margin: 0.5rem auto 0;
-    animation: slideIn 1s ease-out;
+/* Vertical Line (Invisible) */
+.name-line {
+    height: 2.8rem; /* Adjusted to match the height of the text */
+    width: 0; /* Make the line invisible */
+    background-color: transparent; /* Make the line invisible */
+    margin-right: 10px;
+    animation: lineGrow 1s ease-out;
 }
 
-/* Text Glow Effect */
-@keyframes textGlow {
+/* Name Styling */
+.profile-name {
+    font-size: 2.5rem;
+    color: #333; /* Black text color */
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transform: translateX(-100%); /* Start hidden off-screen */
+    animation: slideInFromShadow 1.2s ease-out 0.5s forwards; /* Slide in with delay */
+    text-shadow: 4px 0 8px rgba(0, 0, 0, 0.3); /* Shadow effect to create a subtle depth */
+}
+
+/* Line Growth Animation (Invisible) */
+@keyframes lineGrow {
     from {
-        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5),
-                     0 0 10px rgba(255, 165, 0, 0.5),
-                     0 0 20px rgba(255, 165, 0, 0.3);
+        height: 0;
     }
     to {
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
-                     0 0 20px rgba(255, 165, 0, 0.8),
-                     0 0 30px rgba(255, 165, 0, 0.6);
+        height: 2.8rem; /* Matches the adjusted height of the text */
     }
 }
 
-/* Underline Slide-In Effect */
-@keyframes slideIn {
+/* Name Slide-In Animation */
+@keyframes slideInFromShadow {
     from {
-        width: 0;
+        transform: translateX(-100%);
     }
     to {
-        width: 60%; /* Matches the width of the underline */
+        transform: translateX(0);
     }
 }
 
@@ -298,7 +302,6 @@ footer {
         transform: translateY(0);
     }
 }
-
 
 
 
