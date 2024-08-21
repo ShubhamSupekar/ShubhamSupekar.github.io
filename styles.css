@@ -1,0 +1,348 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 2rem;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #f4a261;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero .btn {
+    background: #f4a261;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.hero .btn:hover {
+    background: #e76f51;
+}
+
+/* Projects Section */
+.projects {
+    padding: 4rem 2rem;
+    background-color: #fff;
+    text-align: center;
+    animation: slideIn 1s ease-out;
+}
+
+.projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.project-card {
+    background: #f4f4f4;
+    padding: 2rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+/* About Section */
+.about {
+    padding: 4rem 2rem;
+    background-color: #e9ecef;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.about p {
+    font-size: 1.1rem;
+}
+
+/* Contact Section */
+.contact {
+    padding: 4rem 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact button {
+    background: #333;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact button:hover {
+    background: #f4a261;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+/* Profile Photo Container */
+.profile-photo-container {
+    display: flex;
+    flex-direction: column; /* Stack photo and name vertically */
+    align-items: center; /* Center-align the content */
+    margin-top: 2rem;
+}
+
+/* Profile Photo Styles */
+.profile-photo {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 250px; /* Maximum width */
+    border-radius: 15px; /* Slightly rounded corners */
+    border: none; /* No border */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Adds a shadow for a 3D effect */
+    transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+    filter: grayscale(50%); /* Initially in grayscale */
+    animation: fadeIn 1s ease-out;
+}
+
+/* Hover Effect */
+.profile-photo:hover {
+    transform: scale(1.1) rotate(3deg); /* Slightly enlarge and rotate */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
+    filter: grayscale(0%); /* Remove grayscale on hover */
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Name Styling */
+.profile-name {
+    margin-top: 1rem;
+    font-size: 2rem; /* Adjust the font size */
+    text-align: center;
+    color: #333;
+    letter-spacing: 2px; /* Adds some spacing between letters */
+    font-weight: 700;
+    text-transform: uppercase;
+    animation: fadeIn 1.5s ease-out, textGlow 2s infinite alternate;
+    position: relative;
+}
+
+/* Name Underline Effect */
+.profile-name::after {
+    content: '';
+    display: block;
+    width: 60%; /* Adjust the width of the underline */
+    height: 4px;
+    background-color: #f4a261; /* Customize the underline color */
+    margin: 0.5rem auto 0;
+    animation: slideIn 1s ease-out;
+}
+
+/* Text Glow Effect */
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5),
+                     0 0 10px rgba(255, 165, 0, 0.5),
+                     0 0 20px rgba(255, 165, 0, 0.3);
+    }
+    to {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                     0 0 20px rgba(255, 165, 0, 0.8),
+                     0 0 30px rgba(255, 165, 0, 0.6);
+    }
+}
+
+/* Underline Slide-In Effect */
+@keyframes slideIn {
+    from {
+        width: 0;
+    }
+    to {
+        width: 60%; /* Matches the width of the underline */
+    }
+}
+
+/* Name Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/* Side Navigation Bar */
+.side-nav {
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3); /* Transparent background */
+    padding: 10px;
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a slight shadow */
+}
+
+.side-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.side-nav ul li {
+    margin: 10px 0;
+}
+
+.side-nav ul li a {
+    color: rgba(0, 0, 0, 0.8); /* Black text */
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.side-nav ul li a:hover {
+    color: #ae9b9b; /* Hover color */
+}
+
+/* Active Section Indicator */
+.side-nav ul li a.active {
+    color: #ffffff; /* Active section color */
+}
+
+/* CSS for visibility control based on scroll position */
+.show-side-nav {
+    display: block !important;
+}
