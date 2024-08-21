@@ -93,7 +93,7 @@ header nav ul li a:hover {
     padding: 4rem 2rem;
     background-color: #fff;
     text-align: center;
-    animation: slideIn 1s ease-out;
+    animation: slideIn 1s ease-out 0.5s;
 }
 
 .projects h2 {
@@ -106,7 +106,7 @@ header nav ul li a:hover {
     padding: 2rem;
     margin: 1rem 0;
     border-radius: 5px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease 0.5s;
 }
 
 .project-card:hover {
@@ -114,7 +114,7 @@ header nav ul li a:hover {
 }
 
 /* About Section */
-.about {
+/* .about {
     padding: 4rem 2rem;
     background-color: #e9ecef;
     text-align: center;
@@ -127,7 +127,7 @@ header nav ul li a:hover {
 
 .about p {
     font-size: 1.1rem;
-}
+} */
 
 /* Contact Section */
 .contact {
@@ -161,7 +161,7 @@ header nav ul li a:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease 0.5s;
 }
 
 .contact button:hover {
@@ -204,7 +204,7 @@ footer {
     display: flex;
     flex-direction: column; /* Stack photo and name vertically */
     align-items: center; /* Center-align the content */
-    margin-top: 2rem;
+    margin-top: 0.0rem;
 }
 
 /* Profile Photo Styles */
@@ -217,7 +217,7 @@ footer {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Adds a shadow for a 3D effect */
     transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
     filter: grayscale(50%); /* Initially in grayscale */
-    animation: fadeIn 1s ease-out;
+    animation: fadeIn 2s ease-out;
 }
 
 /* Hover Effect */
@@ -245,18 +245,18 @@ footer {
 .name-container {
     display: flex;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 0.0rem;
     overflow: hidden; /* Hide the text initially */
     position: relative;
 }
 
 /* Vertical Line (Invisible) */
 .name-line {
-    height: 2.8rem; /* Adjusted to match the height of the text */
-    width: 0; /* Make the line invisible */
+    height: 0.5rem; /* Adjusted to match the height of the text */
+    width: 2px; /* Make the line invisible */
     background-color: transparent; /* Make the line invisible */
-    margin-right: 10px;
-    animation: lineGrow 1s ease-out;
+    margin-right: 3px;
+    animation: lineGrow 1s ease-out 0.5s;
 }
 
 /* Name Styling */
@@ -267,7 +267,7 @@ footer {
     font-weight: 700;
     text-transform: uppercase;
     transform: translateX(-100%); /* Start hidden off-screen */
-    animation: slideInFromShadow 1.2s ease-out 0.5s forwards; /* Slide in with delay */
+    animation: slideInFromShadow 1.2s ease-out 1s forwards; /* Slide in with delay */
     text-shadow: 4px 0 8px rgba(0, 0, 0, 0.3); /* Shadow effect to create a subtle depth */
 }
 
@@ -348,4 +348,73 @@ footer {
 /* CSS for visibility control based on scroll position */
 .show-side-nav {
     display: block !important;
+}
+
+/* Skills Section */
+.skills-section {
+    margin-top: 0.0rem; /* Adjusted margin to space from previous section */
+}
+
+/* Adjust container for proper alignment */
+.skills-compact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjusted min-width for better fit */
+    gap: 5px;
+    justify-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    animation: fade-in 2s ease-in-out 2s forwards;
+    opacity: 0;
+    position: relative; /* Ensure proper stacking context */
+}
+
+/* Skill Item */
+.skill-item {
+    padding: 10px 10px;
+    border-radius: 8px;
+    font-size: 0.85rem; /* Adjusted font size for better fit */
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(45deg, #ff6f61, #d084a1); /* New vibrant gradient colors */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding does not affect width */
+    overflow: hidden; /* Hide overflow text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+    position: relative; /* Relative positioning for absolute children */
+    filter: blur(0); /* Default blur effect */
+    z-index: 1; /* Default stacking context */
+}
+
+/* Highlight on Hover */
+.skill-item:hover {
+    transform: scale(1.15); /* Slightly enlarge the hovered item */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Add shadow for focus effect */
+    background: linear-gradient(45deg, #00c6ff, #0072ff); /* Highlighted color on hover */
+    filter: blur(0); /* Ensure hovered item is clear */
+    z-index: 10; /* Bring hovered item above others */
+}
+
+/* Apply blur effect to other items when one is hovered */
+.skills-compact-grid .skill-item {
+    transition: filter 0.3s ease; /* Smooth transition for blur effect */
+}
+
+.skills-compact-grid:hover .skill-item:not(:hover) {
+    filter: blur(4px); /* Blur non-hovered items */
+}
+
+/* Animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
