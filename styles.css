@@ -96,6 +96,116 @@ header nav ul li a:hover {
     animation: slideIn 1s ease-out 0.5s;
 }
 
+/* Profile Photo Container */
+.profile-photo-container {
+    display: flex;
+    flex-direction: column; /* Stack photo and name vertically */
+    align-items: center; /* Center-align the content */
+    margin-top: 0.0rem;
+}
+
+/* Profile Photo Styles */
+.profile-photo {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 250px; /* Maximum width */
+    border-radius: 15px; /* Slightly rounded corners */
+    border: none; /* No border */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Adds a shadow for a 3D effect */
+    transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+    filter: grayscale(50%); /* Initially in grayscale */
+    animation: fadeIn 2s ease-out;
+}
+
+/* Hover Effect */
+.profile-photo:hover {
+    transform: scale(1.1) rotate(3deg); /* Slightly enlarge and rotate */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
+    filter: grayscale(0%); /* Remove grayscale on hover */
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Name Container */
+.name-container {
+    display: flex;
+    align-items: center;
+    margin-top: 0.0rem;
+    overflow: hidden; /* Hide the text initially */
+    position: relative;
+}
+
+/* Vertical Line (Invisible) */
+.name-line {
+    height: 0.5rem; /* Adjusted to match the height of the text */
+    width: 2px; /* Make the line invisible */
+    background-color: transparent; /* Make the line invisible */
+    margin-right: 3px;
+    animation: lineGrow 1s ease-out 0.5s;
+}
+
+
+/* Name Styling */
+.hero.in-view .profile-name {
+    font-size: 2.5rem;
+    color: #333; /* Black text color */
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transform: translateX(-100%); /* Start hidden off-screen */
+    animation: slideInFromShadow 1s ease-out 0.5s forwards; /* Slide in with delay */
+    text-shadow: 4px 0 8px rgba(0, 0, 0, 0.3); /* Shadow effect to create a subtle depth */
+}
+
+/* Line Growth Animation (Invisible) */
+@keyframes lineGrow {
+    from {
+        height: 0;
+    }
+    to {
+        height: 2.8rem; /* Matches the adjusted height of the text */
+    }
+}
+
+/* Name Slide-In Animation */
+@keyframes slideInFromShadow {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Name Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+
 .projects h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
@@ -199,109 +309,7 @@ footer {
 
 
 
-/* Profile Photo Container */
-.profile-photo-container {
-    display: flex;
-    flex-direction: column; /* Stack photo and name vertically */
-    align-items: center; /* Center-align the content */
-    margin-top: 0.0rem;
-}
 
-/* Profile Photo Styles */
-.profile-photo {
-    width: 100%; /* Full width of the container */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 250px; /* Maximum width */
-    border-radius: 15px; /* Slightly rounded corners */
-    border: none; /* No border */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Adds a shadow for a 3D effect */
-    transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
-    filter: grayscale(50%); /* Initially in grayscale */
-    animation: fadeIn 2s ease-out;
-}
-
-/* Hover Effect */
-.profile-photo:hover {
-    transform: scale(1.1) rotate(3deg); /* Slightly enlarge and rotate */
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
-    filter: grayscale(0%); /* Remove grayscale on hover */
-}
-
-/* Animation Keyframes */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-
-/* Name Container */
-.name-container {
-    display: flex;
-    align-items: center;
-    margin-top: 0.0rem;
-    overflow: hidden; /* Hide the text initially */
-    position: relative;
-}
-
-/* Vertical Line (Invisible) */
-.name-line {
-    height: 0.5rem; /* Adjusted to match the height of the text */
-    width: 2px; /* Make the line invisible */
-    background-color: transparent; /* Make the line invisible */
-    margin-right: 3px;
-    animation: lineGrow 1s ease-out 0.5s;
-}
-
-/* Name Styling */
-.profile-name {
-    font-size: 2.5rem;
-    color: #333; /* Black text color */
-    letter-spacing: 3px;
-    font-weight: 700;
-    text-transform: uppercase;
-    transform: translateX(-100%); /* Start hidden off-screen */
-    animation: slideInFromShadow 1.2s ease-out 1s forwards; /* Slide in with delay */
-    text-shadow: 4px 0 8px rgba(0, 0, 0, 0.3); /* Shadow effect to create a subtle depth */
-}
-
-/* Line Growth Animation (Invisible) */
-@keyframes lineGrow {
-    from {
-        height: 0;
-    }
-    to {
-        height: 2.8rem; /* Matches the adjusted height of the text */
-    }
-}
-
-/* Name Slide-In Animation */
-@keyframes slideInFromShadow {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-/* Name Fade-In Animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 
 
@@ -350,27 +358,81 @@ footer {
     display: block !important;
 }
 
+
+
 /* Skills Section */
-.skills-section {
-    margin-top: 0.0rem; /* Adjusted margin to space from previous section */
+.skills {
+    margin-top: 2rem;
+    text-align: center; /* Center the title */
+}
+
+/* Skills Section Title */
+.skills h2 {
+    font-size: 2rem;
+    color: #ff6f61; /* Initial color for the animation */
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+    opacity: 0; /* Start hidden */
+    transform: translateY(-20px); /* Start slightly above */
+    transition: opacity 1s ease, transform 1s ease; /* Smooth transition */
+}
+
+/* Animation for color change and fade in */
+@keyframes fadeInColor {
+    0% {
+        color: #fcfcfc;
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    50% {
+        color: #4747474f;
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+    100% {
+        color: #000000;
+        opacity: 1;
+    }
+}
+
+/* Adjusted Category Title */
+.category-title {
+    font-size: 1.5rem;
+    color: #000000;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
 /* Adjust container for proper alignment */
 .skills-compact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjusted min-width for better fit */
-    gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
     justify-items: center;
     max-width: 1000px;
     margin: 0 auto;
-    animation: fade-in 2s ease-in-out 2s forwards;
-    opacity: 0;
-    position: relative; /* Ensure proper stacking context */
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 1s ease, transform 1s ease; /* Smooth transition */
 }
+
+/* Animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 /* Skill Item */
 .skill-item {
-    padding: 10px 10px;
+    padding: 10px 20px;
     border-radius: 8px;
     font-size: 0.85rem; /* Adjusted font size for better fit */
     font-weight: bold;
@@ -417,4 +479,11 @@ footer {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Active class that will be added when the section is in view */
+.skills.in-view h2,
+.skills.in-view .skills-compact-grid {
+    opacity: 1;
+    transform: translateY(0); /* Bring to original position */
 }

@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
     const sideNav = document.querySelector(".side-nav");
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".side-nav ul li a");
@@ -29,4 +29,36 @@ document.addEventListener("DOMContentLoaded", function () {
             sideNav.classList.remove("show-side-nav");
         }
     });
+
+    // Intersection Observer for Skills Section
+    const skillsSection = document.querySelector('.skills');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                skillsSection.classList.add('in-view');
+            } else {
+                skillsSection.classList.remove('in-view');
+            }
+        });
+    }, {
+        threshold: 0.5 // Trigger when 50% of the section is in view
+    });
+
+    observer.observe(skillsSection);
+
+    // Intersection Observer for Hero Section
+    const heroSection = document.querySelector('.hero');
+    const heroObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Reset the animation by removing and adding the class
+                heroSection.classList.remove('in-view');
+                void heroSection.offsetWidth; // Trigger reflow
+                heroSection.classList.add('in-view');
+            }
+        });
+    }, { threshold: 0.5 });
+
+    heroObserver.observe(heroSection);
 });
