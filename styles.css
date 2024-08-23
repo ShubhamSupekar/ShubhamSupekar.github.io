@@ -52,7 +52,7 @@ header nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    height: auto;
     background: url('hero-bg.jpg') no-repeat center center/cover;
     color: #fff;
     display: flex;
@@ -62,7 +62,48 @@ header nav ul li a:hover {
     text-align: center;
     padding: 0 2rem;
     animation: fadeIn 1.5s ease-in-out;
+    margin-top: 20px;
 }
+
+/* Hero Section Paragraph */
+.intro-text {
+    font-family: 'Arial', sans-serif; /* Change to a more elegant font */
+    font-size: 1.2rem;
+    color: #333; /* Dark text color for better contrast */
+    margin-top: 0.5rem;
+    max-width: 80%;
+    text-align: center;
+    line-height: 1.7;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+/* Paragraph Animation */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply when paragraph is in view */
+.hero.in-view .intro-text {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInText 1.5s ease-out;
+}
+
+
+
 
 .hero h1 {
     font-size: 3rem;
@@ -87,6 +128,7 @@ header nav ul li a:hover {
 .hero .btn:hover {
     background: #e76f51;
 }
+
 
 /* Projects Section */
 .projects {
