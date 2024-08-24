@@ -47,6 +47,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
     observer.observe(skillsSection);
 
+
+        // Intersection Observer for Experience Section
+    const experienceSection = document.querySelector('.experience');
+
+    const experienceObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                experienceSection.classList.add('in-view');
+            } else {
+                experienceSection.classList.remove('in-view');
+            }
+        });
+    }, {
+        threshold: 0.3 // Trigger when 10% of the section is in view
+    });
+
+    experienceObserver.observe(experienceSection);
+
+
     // Intersection Observer for Hero Section
     const heroSection = document.querySelector('.hero');
     const heroObserver = new IntersectionObserver((entries) => {

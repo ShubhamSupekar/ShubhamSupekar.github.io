@@ -581,3 +581,92 @@ footer {
 .social-icons a:hover {
     transform: translateY(-5px); /* Move the icon up slightly on hover */
 }
+
+
+
+
+
+
+/* Highlighted Company Name */
+.company-name {
+    font-weight: bold;
+    color: #0072ff; /* Strong color for emphasis */
+    background-color: #e8f4ff; /* Light background color for contrast */
+    padding: 0.2rem 0.4rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Company Name Hover Effect */
+.company-name:hover {
+    background-color: #0072ff; /* Inverted hover effect */
+    color: #fff;
+}
+
+/* Experience Section */
+.experience {
+    margin: 4rem 0;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.experience.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Experience Section Title */
+.experience h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 3rem;
+    position: relative;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 1s ease 0.5s, transform 1s ease 0.5s;
+}
+
+.experience.in-view h2 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Experience Item */
+.experience-item {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease 1s, transform 1s ease 1s;
+}
+
+.experience.in-view .experience-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.experience-item h3 {
+    font-size: 1.75rem;
+    color: #0072ff;
+    margin-bottom: 0.5rem;
+}
+
+.experience-duration {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.experience-description {
+    font-size: 1rem;
+    color: #444;
+}
