@@ -8,8 +8,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            if (pageYOffset >= sectionTop - 50) {
+            const sectionHeight = section.offsetHeight;
+            const sectionBottom = sectionTop + sectionHeight;
+
+            if (pageYOffset >= sectionTop - 50 && pageYOffset < sectionBottom) {
                 current = section.getAttribute("id");
+            }
+
+            // If we're at the bottom of the page, ensure the last section is active
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                current = sections[sections.length - 1].getAttribute("id");
             }
         });
 
@@ -32,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Intersection Observer for Skills Section
     const skillsSection = document.querySelector('.skills');
-
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -42,15 +49,13 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }, {
-        threshold: 0.1 // Trigger when 50% of the section is in view
+        threshold: 0.1 // Trigger when 10% of the section is in view
     });
 
     observer.observe(skillsSection);
 
-
-        // Intersection Observer for Experience Section
+    // Intersection Observer for Experience Section
     const experienceSection = document.querySelector('.experience');
-
     const experienceObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -60,18 +65,16 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }, {
-        threshold: 0.3 // Trigger when 10% of the section is in view
+        threshold: 0.3 // Trigger when 30% of the section is in view
     });
 
     experienceObserver.observe(experienceSection);
-
 
     // Intersection Observer for Hero Section
     const heroSection = document.querySelector('.hero');
     const heroObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Reset the animation by removing and adding the class
                 heroSection.classList.remove('in-view');
                 void heroSection.offsetWidth; // Trigger reflow
                 heroSection.classList.add('in-view');
