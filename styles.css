@@ -142,8 +142,10 @@ header nav ul li a:hover {
 .profile-photo-container {
     display: flex;
     flex-direction: column; /* Stack photo and name vertically */
+    position: relative;
+    text-align: center;
     align-items: center; /* Center-align the content */
-    margin-top: 0.0rem;
+    margin-top: 0.2rem;
 }
 
 /* Profile Photo Styles */
@@ -528,4 +530,54 @@ footer {
 .skills.in-view .skills-compact-grid {
     opacity: 1;
     transform: translateY(0); /* Bring to original position */
+}
+
+
+
+.social-icons {
+    position: absolute;
+    top: 30%;
+    left: 60%; /* Position it just beside the photo */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    width: 40px; /* Increase icon size */
+    height: 40px; /* Increase icon size */
+    margin: 10px 0;
+    color: #333; /* Dark color for visibility */
+    background-size: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icon.linkedin {
+    background-image: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/svgs/brands/linkedin.svg');
+}
+
+.social-icon.email {
+    background-image: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/svgs/solid/envelope.svg');
+}
+
+.social-icon.github {
+    background-image: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/svgs/brands/github.svg');
+}
+
+/* Hover Effect */
+.social-icon:hover {
+    transform: scale(1.3); /* Slightly enlarge on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add shadow for focus effect */
+}
+
+/* Smooth Transition for Icons */
+.social-icons a {
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px); /* Move the icon up slightly on hover */
 }
