@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }, {
-        threshold: 0.4 // Trigger when 40% of the section is in view
+        threshold: 0.25 // Trigger when 20% of the section is in view
     });
 
     experienceObserver.observe(experienceSection);
