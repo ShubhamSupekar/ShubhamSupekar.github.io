@@ -145,19 +145,35 @@
         </div>
     </section>
 
-
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <p>Feel free to reach out through the form below.</p>
-        <form action="#">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+        <div class="contact-box">
+            <video autoplay muted loop class="background-video">
+                <source src="background video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="contact-content">
+                <h2>Let's Connect—Drop Me a Line!</h2>
+                <form action="https://formspree.io/f/mpwabzpd" method="POST" id="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
     </section>
 
+    <!-- Popup Message -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="popup-check">&#10004;</span>
+            <p>Message sent</p>
+        </div>
+    </div>
+
+
+    
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 My Portfolio. All Rights Reserved.</p>

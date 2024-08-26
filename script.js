@@ -11,16 +11,17 @@ document.addEventListener('DOMContentLoaded', function () {
             const sectionHeight = section.offsetHeight;
             const sectionBottom = sectionTop + sectionHeight;
 
-            if (pageYOffset >= sectionTop - 50 && pageYOffset < sectionBottom) {
+            if (window.scrollY >= sectionTop - 50 && window.scrollY < sectionBottom) {
                 current = section.getAttribute("id");
-            }
-
-            // If we're at the bottom of the page, ensure the last section is active
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-                current = sections[sections.length - 1].getAttribute("id");
             }
         });
 
+        // Ensure the last section is active when scrolled to the bottom of the page
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+            current = sections[sections.length - 1].getAttribute("id");
+        }
+
+        // Update nav links to reflect the active section
         navLinks.forEach(link => {
             link.classList.remove("active");
             if (link.getAttribute("href").includes(current)) {
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
+        // Show or hide the side navigation bar based on header position
         const header = document.querySelector("header");
         const headerBottom = header.offsetTop + header.offsetHeight;
 
@@ -38,55 +40,30 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Intersection Observer for Skills Section
-    const skillsSection = document.querySelector('.skills');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                skillsSection.classList.add('in-view');
-            } else {
-                skillsSection.classList.remove('in-view');
-            }
+    // Intersection Observer for various sections
+    const observeSection = (sectionClass, thresholdValue) => {
+        const section = document.querySelector(sectionClass);
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    section.classList.add('in-view');
+                } else {
+                    section.classList.remove('in-view');
+                }
+            });
+        }, {
+            threshold: thresholdValue
         });
-    }, {
-        threshold: 0.1 // Trigger when 10% of the section is in view
-    });
 
-    observer.observe(skillsSection);
+        observer.observe(section);
+    };
 
-    const projectsSection = document.querySelector('.projects');
-    
-    const projectsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                projectsSection.classList.add('in-view');
-            } else {
-                projectsSection.classList.remove('in-view');
-            }
-        });
-    }, {
-        threshold: 0.5 // Trigger when 50% of the section is in view
-    });
+    observeSection('.skills', 0.1);
+    observeSection('.projects', 0.5);
+    observeSection('.experience', 0.25);
+    observeSection('.contact', 0.3);
 
-    projectsObserver.observe(projectsSection);
-
-    // Intersection Observer for Experience Section
-    const experienceSection = document.querySelector('.experience');
-    const experienceObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                experienceSection.classList.add('in-view');
-            } else {
-                experienceSection.classList.remove('in-view');
-            }
-        });
-    }, {
-        threshold: 0.25 // Trigger when 20% of the section is in view
-    });
-
-    experienceObserver.observe(experienceSection);
-
-    // Intersection Observer for Hero Section
+    // Intersection Observer for Hero Section with reflow trigger
     const heroSection = document.querySelector('.hero');
     const heroObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -99,4 +76,37 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { threshold: 0.1 });
 
     heroObserver.observe(heroSection);
+
+    // Form submission handling with popup
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from redirecting
+
+        const form = event.target;
+
+        fetch(form.action, {
+            method: form.method,
+            body: new FormData(form),
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                showPopup();
+                form.reset(); // Clear the form fields
+            } else {
+                alert('Oops! There was a problem submitting your form');
+            }
+        }).catch(error => {
+            alert('Oops! There was a problem submitting your form');
+        });
+    });
+
+    function showPopup() {
+        const popup = document.getElementById('popup');
+        popup.classList.add('show');
+
+        setTimeout(() => {
+            popup.classList.remove('show');
+        }, 3000); // Hide the popup after 3 seconds
+    }
 });
