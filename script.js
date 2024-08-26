@@ -54,6 +54,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     observer.observe(skillsSection);
 
+    const projectsSection = document.querySelector('.projects');
+    
+    const projectsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                projectsSection.classList.add('in-view');
+            } else {
+                projectsSection.classList.remove('in-view');
+            }
+        });
+    }, {
+        threshold: 0.5 // Trigger when 50% of the section is in view
+    });
+
+    projectsObserver.observe(projectsSection);
+
     // Intersection Observer for Experience Section
     const experienceSection = document.querySelector('.experience');
     const experienceObserver = new IntersectionObserver((entries) => {
@@ -65,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }, {
-        threshold: 0.3 // Trigger when 30% of the section is in view
+        threshold: 0.4 // Trigger when 40% of the section is in view
     });
 
     experienceObserver.observe(experienceSection);
