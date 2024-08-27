@@ -77,3 +77,41 @@
     }
 }
 
+/* Mobile Styles for Hero Section */
+@media (max-width: 768px) {
+    .hero {
+        padding: 1rem;
+    }
+
+    .profile-photo-container {
+        margin-top: 1rem;
+    }
+
+    /* Adjust Social Icons for Mobile */
+    .social-icons {
+        position: static; /* Position the icons statically */
+        display: flex;
+        justify-content: center; /* Center the icons horizontally */
+        margin-top: 2rem; /* Add space above the icons */
+        margin-bottom: 1rem; /* Add space below the icons */
+        flex-direction: row; /* Align the icons horizontally */
+    }
+
+    .social-icon {
+        font-size: 1.2rem; /* Slightly smaller icons */
+        width: 35px; /* Adjust icon size */
+        height: 35px; /* Adjust icon size */
+        margin: 0 10px; /* Space between icons */
+    }
+
+    /* Adjust Intro Text for Mobile */
+    .intro-text {
+        font-size: 0.5rem; /* Smaller text size */
+        padding: 1rem; /* Adjust padding */
+        max-width: 95%; /* Reduce max width */
+    }
+        /* Profile Name Adjustments */
+        .hero.in-view .profile-name {
+            font-size: 1.5rem; /* Reduce name size */
+        }
+}
