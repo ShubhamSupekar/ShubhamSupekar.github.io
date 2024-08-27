@@ -1,4 +1,4 @@
-/* Mobile Styles for Header */
+/* Mobile styles for Header */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -42,4 +42,38 @@
         color: #f4a261;
         background-color: #222;
     }
+
 }
+
+/* Mobile Styles for Side Navigation */
+@media (max-width: 768px) {
+    .side-nav {
+        height: 40%; /* Adjust height for mobile screens */
+        width: 80px; /* Adjust width for mobile screens */
+        right: 5px; /* Adjust from the right edge to make it visible */
+        background-color: rgba(0, 0, 0, 0.2); /* More transparent */
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transitions */
+        opacity: 0; /* Start hidden */
+    }
+
+    .side-nav.show-side-nav {
+        opacity: 1; /* Fully visible when shown */
+        transform: translateX(0); /* Move into view */
+    }
+
+    .side-nav ul {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        justify-content: space-around; /* Distribute items evenly */
+    }
+
+    .side-nav ul li a {
+        font-size: 1rem;
+        color: rgba(0, 0, 0, 0.9); /* Slightly transparent text */
+    }
+}
+

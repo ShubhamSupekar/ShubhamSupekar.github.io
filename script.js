@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const sideNav = document.querySelector(".side-nav");
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".side-nav ul li a");
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchEndX = 0;
+    let touchEndY = 0;
+    let timeout;
 
     window.addEventListener("scroll", () => {
         let current = "";
@@ -109,4 +114,41 @@ document.addEventListener('DOMContentLoaded', function () {
             popup.classList.remove('show');
         }, 3000); // Hide the popup after 3 seconds
     }
+
+    // Mobile touch interaction to show/hide side navigation
+    // Function to show the side navigation
+    function showSideNav() {
+        sideNav.classList.add('show-side-nav');
+        clearTimeout(timeout); // Clear any existing timeout
+        timeout = setTimeout(hideSideNav, 3000); // Hide after 3 seconds of no interaction
+    }
+
+    // Function to hide the side navigation
+    function hideSideNav() {
+        sideNav.classList.remove('show-side-nav');
+    }
+
+    // Event listener for touch start
+    document.addEventListener('touchstart', function(e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+    });
+
+    // Event listener for touch move
+    document.addEventListener('touchmove', function(e) {
+        touchEndX = e.touches[0].clientX;
+        touchEndY = e.touches[0].clientY;
+
+        // Check if the touch movement is significant
+        if (Math.abs(touchEndX - touchStartX) > 10 || Math.abs(touchEndY - touchStartY) > 10) {
+            showSideNav();
+        }
+    });
+
+    // Event listener for touch end
+    document.addEventListener('touchend', function() {
+        // Restart the hide timeout after interaction ends
+        clearTimeout(timeout);
+        timeout = setTimeout(hideSideNav, 2000);
+    });
 });

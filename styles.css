@@ -492,7 +492,7 @@ footer {
 
 /* Active Section Indicator */
 .side-nav ul li a.active {
-    color: #ffffff; /* Active section color */
+    color: #dd7373; /* Active section color */
 }
 
 /* CSS for visibility control based on scroll position */
