@@ -1,0 +1,45 @@
+/* Mobile Styles for Header */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    header .logo {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center items horizontally */
+        padding: 0;
+        margin: 0;
+    }
+
+    header nav ul li {
+        width: 45%; /* Allows for two items per row */
+        margin: 0.5rem 2%; /* Adjust spacing between items */
+        text-align: center;
+        background: #444;
+        border-radius: 5px;
+        transition: background-color 0.3s ease; /* Smooth background transition */
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: 0.7rem;
+        color: #fff;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        border-radius: 5px;
+        transition: color 0.3s ease, background-color 0.3s ease; /* Smooth color transition */
+    }
+
+    header nav ul li a:hover {
+        color: #f4a261;
+        background-color: #222;
+    }
+}
