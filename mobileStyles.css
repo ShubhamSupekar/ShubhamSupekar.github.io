@@ -255,3 +255,96 @@
         font-size: 0.9rem; /* Adjust font size for readability on mobile */
     }
 }
+
+
+/* Project Section - Mobile */
+@media (max-width: 768px) {
+    .projects {
+        padding: 2rem 0.5rem; /* Reduce padding for better fit on mobile */
+        margin-bottom: 1.5rem; /* Adjust bottom margin */
+    }
+
+    .projects h2 {
+        font-size: 2rem; /* Reduce font size for mobile */
+        margin-bottom: 0.75rem; /* Adjust bottom margin */
+        animation: fadeInTitle 1s ease-out forwards; /* Keep the same animation */
+    }
+
+    .projects.in-view .project-card {
+        padding: 1.5rem; /* Reduce padding for smaller screens */
+        margin: 1rem 0; /* Keep margin consistent */
+        max-width: 100%; /* Ensure full width on mobile */
+        border-radius: 8px; /* Slightly reduce border-radius */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adjust shadow for smaller screens */
+    }
+
+    .project-card h3 {
+        font-size: 1.5rem; /* Reduce font size for mobile */
+        margin-bottom: 0.75rem; /* Adjust bottom margin */
+    }
+
+    .project-card p,
+    .project-card ul li {
+        font-size: 0.9rem; /* Slightly reduce font size for better readability */
+        margin-bottom: 0.5rem; /* Keep consistent spacing */
+    }
+
+    .project-link {
+        padding: 0.4rem 0.8rem; /* Adjust padding for mobile */
+        font-size: 0.9rem; /* Slightly reduce font size */
+        border-radius: 4px; /* Slightly reduce border-radius */
+    }
+}
+
+
+/* Contact Section - Mobile */
+@media (max-width: 768px) {
+    .contact.in-view {
+        padding: 1rem 0.5rem; /* Reduce padding for mobile */
+        margin: 0.5rem 0; /* Reduce margin */
+        flex-direction: column; /* Stack elements vertically on mobile */
+    }
+
+    /* Contact Box - Mobile */
+    .contact.in-view .contact-box {
+        max-width: 100%; /* Full width on mobile */
+        border-radius: 10px; /* Slightly reduce border-radius */
+        padding: 1.5rem; /* Add padding inside the box for better spacing */
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Adjust shadow for mobile */
+    }
+
+    /* Contact Content - Mobile */
+    .contact-content {
+        padding: 1.5rem; /* Reduce padding inside the content */
+    }
+
+    /* Contact Section Title - Mobile */
+    .contact-content h2 {
+        font-size: 2rem; /* Reduce font size for mobile */
+        margin-bottom: 1rem; /* Add some margin at the bottom */
+    }
+
+    /* Form Elements - Mobile */
+    .contact-content form {
+        gap: 0.75rem; /* Reduce gap between form elements */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        padding: 0.6rem; /* Adjust padding for mobile */
+        font-size: 0.9rem; /* Reduce font size */
+        border-radius: 8px; /* Slightly reduce border-radius */
+    }
+
+    textarea {
+        height: 120px; /* Reduce textarea height for mobile */
+    }
+
+    /* Submit Button Styling - Mobile */
+    button {
+        padding: 0.6rem; /* Adjust padding for mobile */
+        font-size: 1rem; /* Reduce font size */
+        border-radius: 8px; /* Slightly reduce border-radius */
+    }
+}
