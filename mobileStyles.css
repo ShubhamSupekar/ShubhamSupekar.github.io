@@ -51,7 +51,7 @@
         height: 40%; /* Adjust height for mobile screens */
         width: 80px; /* Adjust width for mobile screens */
         right: 1px; /* Adjust from the right edge to make it visible */
-        background-color: rgba(0, 0, 0, 0.2); /* More transparent */
+        background-color: rgba(255, 249, 249, 0.7); /* More transparent */
         transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transitions */
         opacity: 0; /* Start hidden */
     }
@@ -73,7 +73,12 @@
 
     .side-nav ul li a {
         font-size: 1rem;
-        color: rgba(0, 0, 0, 0.9); /* Slightly transparent text */
+        color: rgb(241, 0, 0); /* Slightly transparent text */
+    }
+
+    /* Active Section Indicator */
+    .side-nav ul li a.active {
+        color: #000000; /* Active section color */
     }
 }
 
@@ -116,7 +121,7 @@
     /* Adjust Intro Text for Mobile */
     .intro-text {
         margin-top: 0rem;
-        font-size: 0.5rem; /* Smaller text size */
+        font-size: 0.1rem; /* Smaller text size */
         /* padding: 1rem; Adjust padding */
         max-width: 95%; /* Reduce max width */
         padding: 0.1rem;
