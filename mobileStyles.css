@@ -210,3 +210,48 @@
         transform: translateY(0); /* Bring to original position */
     }
 }
+
+
+/* Highlighted Company Name - Mobile */
+@media (max-width: 768px) {
+    .company-name {
+        font-size: 1rem; /* Adjust font size for mobile */
+        padding: 0.15rem 0.3rem; /* Adjust padding for mobile */
+        border-radius: 4px; /* Slightly reduce border-radius */
+    }
+}
+
+/* Experience Section - Mobile */
+@media (max-width: 768px) {
+    .experience {
+        margin: 2rem 0; /* Reduce margin to fit mobile screens */
+        padding: 1.5rem; /* Adjust padding for better spacing */
+        transform: translateY(15px); /* Slightly reduce the translation */
+    }
+
+    /* Experience Section Title - Mobile */
+    .experience h2 {
+        font-size: 2rem; /* Reduce font size for mobile */
+        margin-bottom: 2rem; /* Reduce bottom margin for better spacing */
+        transform: translateY(-15px); /* Slightly reduce the translation */
+    }
+
+    /* Experience Item - Mobile */
+    .experience-item {
+        margin-bottom: 1.5rem; /* Reduce margin between items */
+        padding: 1rem; /* Adjust padding for better fit */
+        transform: translateY(15px); /* Slightly reduce the translation */
+    }
+
+    .experience-item h3 {
+        font-size: 1.5rem; /* Reduce font size for mobile */
+    }
+
+    .experience-duration {
+        font-size: 0.9rem; /* Adjust font size for readability on mobile */
+    }
+
+    .experience-description {
+        font-size: 0.9rem; /* Adjust font size for readability on mobile */
+    }
+}
