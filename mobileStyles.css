@@ -155,3 +155,58 @@
     }
 
 }
+
+
+/* Skills Section - Mobile */
+@media (max-width: 768px) {
+    .skills {
+        margin-top: 1.5rem;
+        padding: 0 1rem; /* Add padding to avoid content touching the edges */
+        text-align: center; /* Center the title */
+    }
+
+    /* Skills Section Title - Mobile */
+    .skills h2 {
+        font-size: 1.5rem; /* Reduce the font size for better visibility on small screens */
+        margin-bottom: 1.5rem;
+        transform: translateY(-15px); /* Slightly reduce the translation */
+    }
+
+    /* Adjusted Category Title - Mobile */
+    .category-title {
+        font-size: 1.25rem; /* Reduce the font size for mobile */
+        margin-bottom: 0.75rem;
+    }
+
+    /* Adjust container for proper alignment - Mobile */
+    .skills-compact-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust grid for smaller screens */
+        gap: 8px; /* Reduce gap between grid items */
+        max-width: 100%; /* Ensure it fits within the screen width */
+        transform: translateY(15px); /* Slightly reduce the translation */
+    }
+
+    /* Skill Item - Mobile */
+    .skill-item {
+        padding: 8px 15px; /* Reduce padding for smaller screens */
+        font-size: 0.75rem; /* Further reduce font size */
+        transform: scale(1); /* Default scale */
+    }
+
+    /* Highlight on Hover - Mobile */
+    .skill-item:hover {
+        transform: scale(1.1); /* Slightly smaller scale on hover */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Slightly reduce shadow size */
+    }
+
+    /* Blur effect adjustment - Mobile */
+    .skills-compact-grid:hover .skill-item:not(:hover) {
+        filter: blur(3px); /* Slightly reduce the blur effect */
+    }
+
+    /* Active class when in view - Mobile */
+    .skills.in-view h2,
+    .skills.in-view .skills-compact-grid {
+        transform: translateY(0); /* Bring to original position */
+    }
+}
