@@ -93,9 +93,13 @@
         position: static; /* Position the icons statically */
         display: flex;
         justify-content: center; /* Center the icons horizontally */
-        margin-top: 1.6rem; /* Add space above the icons */
-        /* margin-bottom: 0.5rem; Add space below the icons */
+        margin-top: 1rem; /* Add space above the icons */
+        margin-bottom: 0rem; 
         flex-direction: row; /* Align the icons horizontally */
+        box-shadow: none; /* Remove shadow effect */
+        transform: none; /* Remove any scaling or transformation */
+        filter: none; /* Remove grayscale or other filters */
+        transition: none; /* Disable any transitions or animations */
     }
 
     .social-icon {
@@ -103,18 +107,23 @@
         width: 60px; /* Adjust icon size */
         height: 60px; /* Adjust icon size */
         margin: 0 5px; /* Space between icons */
+        box-shadow: none; /* Remove shadow effect */
+        transform: none; /* Remove any scaling or transformation */
+        filter: none; /* Remove grayscale or other filters */
+        transition: none; /* Disable any transitions or animations */
     }
 
     /* Adjust Intro Text for Mobile */
     .intro-text {
-        margin-top: 0.1rem;
+        margin-top: 0rem;
         font-size: 0.5rem; /* Smaller text size */
         /* padding: 1rem; Adjust padding */
         max-width: 95%; /* Reduce max width */
         padding: 0.1rem;
     }
         /* Profile Name Adjustments */
-        .hero.in-view .profile-name {
+    .hero.in-view .profile-name {
             font-size: 1.5rem; /* Reduce name size */
-        }
+    }
+    
 }
