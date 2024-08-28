@@ -3,12 +3,12 @@
     header {
         flex-direction: column;
         align-items: center;
-        padding: 1rem;
+        padding: 0.1rem;
     }
 
     header .logo {
-        margin-bottom: 1rem;
-        font-size: 1.2rem;
+        /* margin-bottom: 0.1rem; */
+        font-size: 1rem;
     }
 
     header nav ul {
@@ -21,10 +21,10 @@
 
     header nav ul li {
         width: 45%; /* Allows for two items per row */
-        margin: 0.5rem 2%; /* Adjust spacing between items */
+        margin: 0.1rem 1%; /* Adjust spacing between items */
         text-align: center;
         background: #444;
-        border-radius: 5px;
+        border-radius: 25px;
         transition: background-color 0.3s ease; /* Smooth background transition */
     }
 
@@ -32,9 +32,9 @@
         display: block;
         padding: 0.7rem;
         color: #fff;
-        font-size: 0.9rem;
+        font-size: 0.6rem;
         text-transform: uppercase;
-        border-radius: 5px;
+        border-radius: 30px;
         transition: color 0.3s ease, background-color 0.3s ease; /* Smooth color transition */
     }
 
@@ -50,7 +50,7 @@
     .side-nav {
         height: 40%; /* Adjust height for mobile screens */
         width: 80px; /* Adjust width for mobile screens */
-        right: 5px; /* Adjust from the right edge to make it visible */
+        right: 1px; /* Adjust from the right edge to make it visible */
         background-color: rgba(0, 0, 0, 0.2); /* More transparent */
         transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transitions */
         opacity: 0; /* Start hidden */
@@ -80,11 +80,12 @@
 /* Mobile Styles for Hero Section */
 @media (max-width: 768px) {
     .hero {
-        padding: 1rem;
+        padding: 0rem;
     }
 
     .profile-photo-container {
-        margin-top: 1rem;
+        margin-top: 0rem;
+        margin-bottom: 0%;
     }
 
     /* Adjust Social Icons for Mobile */
@@ -92,23 +93,25 @@
         position: static; /* Position the icons statically */
         display: flex;
         justify-content: center; /* Center the icons horizontally */
-        margin-top: 2rem; /* Add space above the icons */
-        margin-bottom: 1rem; /* Add space below the icons */
+        margin-top: 1.6rem; /* Add space above the icons */
+        /* margin-bottom: 0.5rem; Add space below the icons */
         flex-direction: row; /* Align the icons horizontally */
     }
 
     .social-icon {
         font-size: 1.2rem; /* Slightly smaller icons */
-        width: 35px; /* Adjust icon size */
-        height: 35px; /* Adjust icon size */
-        margin: 0 10px; /* Space between icons */
+        width: 60px; /* Adjust icon size */
+        height: 60px; /* Adjust icon size */
+        margin: 0 5px; /* Space between icons */
     }
 
     /* Adjust Intro Text for Mobile */
     .intro-text {
+        margin-top: 0.1rem;
         font-size: 0.5rem; /* Smaller text size */
-        padding: 1rem; /* Adjust padding */
+        /* padding: 1rem; Adjust padding */
         max-width: 95%; /* Reduce max width */
+        padding: 0.1rem;
     }
         /* Profile Name Adjustments */
         .hero.in-view .profile-name {
