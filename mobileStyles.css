@@ -104,8 +104,8 @@
 
     .social-icon {
         font-size: 1.2rem; /* Slightly smaller icons */
-        width: 60px; /* Adjust icon size */
-        height: 60px; /* Adjust icon size */
+        width: 30px; /* Adjust icon size */
+        height: 30px; /* Adjust icon size */
         margin: 0 5px; /* Space between icons */
         box-shadow: none; /* Remove shadow effect */
         transform: none; /* Remove any scaling or transformation */
@@ -125,5 +125,28 @@
     .hero.in-view .profile-name {
             font-size: 1.5rem; /* Reduce name size */
     }
-    
+
+    /* Hover Effect */
+    .social-icon:hover {
+        box-shadow: none; /* Remove shadow effect */
+        transform: none; /* Remove any scaling or transformation */
+        filter: none; /* Remove grayscale or other filters */
+        transition: none; /* Disable any transitions or animations */
+    }
+
+    /* Smooth Transition for Icons */
+    .social-icons a {
+        box-shadow: none; /* Remove shadow effect */
+        transform: none; /* Remove any scaling or transformation */
+        filter: none; /* Remove grayscale or other filters */
+        transition: none; /* Disable any transitions or animations */
+    }
+
+    .social-icons a:hover {
+        box-shadow: none; /* Remove shadow effect */
+        transform: none; /* Remove any scaling or transformation */
+        filter: none; /* Remove grayscale or other filters */
+        transition: none; /* Disable any transitions or animations */
+    }
+
 }
