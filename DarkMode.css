@@ -212,7 +212,7 @@ body.dark-mode .company-name:hover {
 
 
 body.dark-mode .projects {
-    background-color: #121212; /* Dark background */
+    background-color: #1e1e1e88; /* Dark background */
     color: #e0e0e0; /* Light text */
 }
 
