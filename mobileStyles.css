@@ -48,38 +48,27 @@
 /* Mobile Styles for Side Navigation */
 @media (max-width: 768px) {
     .side-nav {
-        height: 40%; /* Adjust height for mobile screens */
-        width: 80px; /* Adjust width for mobile screens */
-        right: 1px; /* Adjust from the right edge to make it visible */
-        background-color: rgba(255, 249, 249, 0.7); /* More transparent */
-        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transitions */
+        visibility: hidden;
         opacity: 0; /* Start hidden */
     }
 
     .side-nav.show-side-nav {
-        opacity: 1; /* Fully visible when shown */
-        transform: translateX(0); /* Move into view */
+        visibility: hidden;
+        opacity: 0; /* Fully visible when shown */
     }
 
-    .side-nav ul {
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 100%;
-        justify-content: space-around; /* Distribute items evenly */
+    /* .side-nav ul {
+        visibility: hidden;
     }
 
     .side-nav ul li a {
-        font-size: 1rem;
-        color: rgb(241, 0, 0); /* Slightly transparent text */
+        visibility: hidden;
     }
 
     /* Active Section Indicator */
-    .side-nav ul li a.active {
-        color: #000000; /* Active section color */
-    }
+    /* .side-nav ul li a.active {
+        visibility: hidden;
+    } */ 
 }
 
 /* Mobile Styles for Hero Section */
