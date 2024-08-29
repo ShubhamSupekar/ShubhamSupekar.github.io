@@ -927,3 +927,26 @@ footer {
     visibility: visible;
     opacity: 1;
 }
+
+
+/* Scroll Button Styling */
+.scroll-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 1rem;
+    background-color: #0072ff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    z-index: 1000; /* Ensures it stays above other content */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-button:hover {
+    background-color: #005bb5; /* Darker blue on hover */
+    transform: translateY(-5px); /* Slight lift on hover */
+}

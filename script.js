@@ -158,6 +158,11 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.classList.toggle('dark-mode');
     });
 
+    document.getElementById("scrollToHero").addEventListener("click", function() {
+        document.querySelector("#hero").scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+    });
     // const toggleDarkMode = document.querySelector('#dark-mode-toggle');
 
     // toggleDarkMode.addEventListener('click', () => {
