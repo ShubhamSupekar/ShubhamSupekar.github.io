@@ -242,7 +242,7 @@ header nav ul li a:hover {
 
 
 
-.projects h2 {
+/* .projects h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
 }
@@ -257,7 +257,7 @@ header nav ul li a:hover {
 
 .project-card:hover {
     transform: translateY(-5px);
-}
+} */
 
 /* About Section */
 /* .about {

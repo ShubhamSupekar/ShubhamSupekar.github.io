@@ -151,4 +151,17 @@ document.addEventListener('DOMContentLoaded', function () {
         clearTimeout(timeout);
         timeout = setTimeout(hideSideNav, 2000);
     });
+
+
+    // Theme toggle functionality
+    document.getElementById('theme-toggle').addEventListener('change', function () {
+        document.body.classList.toggle('dark-mode');
+    });
+
+    // const toggleDarkMode = document.querySelector('#dark-mode-toggle');
+
+    // toggleDarkMode.addEventListener('click', () => {
+    //     document.body.classList.toggle('dark-mode');
+    //     document.querySelector('.hero').classList.toggle('dark-mode');
+    // });
 });
